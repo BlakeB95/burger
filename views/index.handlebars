@@ -1,0 +1,60 @@
+<div class="ripple-background">
+  <div class="circle xxlarge shade1"></div>
+  <div class="circle xlarge shade2"></div>
+  <div class="circle large shade3"></div>
+  <div class="circle mediun shade4"></div>
+  <div class="circle small shade5"></div>
+</div>
+<div class="content">
+    <div class="container mt-2">
+    <div style="text-align: center;">
+        <h1 id="burgerHeader" class="text-primary">Eat Da Burger!</h1>
+        <img id="burgImg" src="/assets/img/burger.png">
+    </div>
+</div>
+<div class="container mt-2">
+    <div id="eaten" class="row">
+        <div class="col-sm-6 border border-primary">
+            <h4 class="text-primary">Available:</h4>
+            	{{#each burger_data}}
+			  	    {{#unless this.devoured}}
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-header"><h3>{{this.burger_name}}</h3></div>
+                        <div class="card-body">
+                            <form class="devour button-size">
+                            <input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+                            <button type="submit" class="btn btn-primary">Devour!</button>
+                            </form>
+                        </div>
+                    </div>
+                    {{/unless}}
+                {{/each}}
+        </div>
+        <div class="col-sm-6 border border-primary">
+            <h4 class="text-primary">Eaten:</h4>
+            {{#each burger_data}}
+                {{#if this.devoured}}
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-header"><h3>{{this.burger_name}}</h3></div>
+                    <div class="card-body">
+                        <form class="regurgitate button-size">
+                            <input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+                            <button type="submit" class="btn btn-primary">Regurgitate!</button>
+                        </form>
+                    </div>
+                </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="container mt-2">
+    <div style="margin: 0 auto;" class="w-50">
+        <form action="/burgers/create" method="POST">
+            <input name="burger_name" class="form-control" type="text" value="" placeholder="Burgin'">
+            <p>Enter a burger!</p>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
