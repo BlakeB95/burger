@@ -4,7 +4,8 @@
   "description": "burger eating app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,9 @@
     "install": "^0.12.2",
     "mysql": "^2.17.1",
     "npm": "^6.9.0"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
   }
 }
