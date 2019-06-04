@@ -43,9 +43,12 @@
     margin-bottom: 30px;
     padding: 20px;
     height: 100%;
-    position: sticky;
     text-align:center;
-    width: 70%;
+    width: 50%;
+    zoom: .78; 
+    /* For Firefox */
+    -moz-transform: scale(0.5); 
+    -moz-transform-origin: 0 0;
   }
 
   body{
@@ -54,7 +57,7 @@
   
   
   .circle{
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     background: white;
     animation: ripple 15s infinite;

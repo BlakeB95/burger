@@ -1,5 +1,10 @@
 $(document).ready(function() {
     
+  $('.ripple-background').css('max-height', '100%');
+  $('.ripple-background').css('max-height', screen.height);
+
+
+
   $(".devour").on("submit", function(event) {
     event.preventDefault();
 
